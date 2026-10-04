@@ -1,0 +1,27 @@
+services:
+  api:
+    build: .
+    container_name: dispatch-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+
+  postgres:
+    image: postgres:17
+    container_name: dispatch-api-postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - dispatch_api_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  dispatch_api_postgres_data:
