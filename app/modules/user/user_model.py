@@ -15,6 +15,6 @@ class User(Base):
         index=True,
     )
     password: Mapped[str] = mapped_column(String(255))
-    status: Mapped[str] = mapped_column(String(255))
+    status: Mapped[str] = mapped_column(String(255), default="inactive")
     phone: Mapped[str] = mapped_column(String(255))
     address: Mapped[str] = mapped_column(String(255))

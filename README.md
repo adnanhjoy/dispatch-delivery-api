@@ -47,11 +47,3 @@ Run the test suite with:
 ```bash
 pytest
 ```
-
-## Contributing
-
-Feel free to open issues or submit pull requests. Please follow the code of conduct.
-
-## License
-
-MIT License
