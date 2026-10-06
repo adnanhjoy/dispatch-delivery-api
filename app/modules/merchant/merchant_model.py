@@ -31,17 +31,17 @@ class MerchantProfile(Base):
 
     business_phone: Mapped[str | None] = mapped_column(
         String(20),
-        nullable=True
+        nullable=False
     )
 
     business_address: Mapped[str | None] = mapped_column(
         Text,
-        nullable=True
+        nullable=False
     )
 
     trade_license: Mapped[str | None] = mapped_column(
         String(100),
-        nullable=True
+        nullable=False
     )
 
     created_at: Mapped[datetime] = mapped_column(
